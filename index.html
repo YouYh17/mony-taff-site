@@ -15,7 +15,7 @@
 <meta property="og:locale" content="ja_JP">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -91,7 +91,7 @@
   --cream:#F5EFE6;
   --charcoal:#3B3B3B;
   --line:rgba(59,59,59,.15);
-  --serif:"Cormorant Garamond", "Times New Roman", serif;
+  --serif:"Marcellus SC", "Times New Roman", serif;
   --sans:"Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -104,8 +104,8 @@ a{color:inherit}
 /* header */
 header{position:sticky;top:0;z-index:10;background:rgba(245,239,230,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
-.brand{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:.06em;text-decoration:none}
-nav{display:flex;gap:20px;font-size:13px;letter-spacing:.08em}
+.brand{font-family:var(--serif);font-weight:400;font-size:19px;letter-spacing:.08em;text-decoration:none}
+nav{display:flex;gap:22px;font-size:13px;letter-spacing:.12em;font-family:var(--serif)}
 nav a{text-decoration:none;opacity:.8}
 nav a:hover{opacity:1}
 
@@ -123,6 +123,16 @@ nav a:hover{opacity:1}
 .tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px}
 .tags span{border:1px solid var(--beige);color:var(--cream);background:rgba(40,48,39,.35);border-radius:999px;padding:3px 14px;font-size:13px;letter-spacing:.04em}
 
+.hero-kv{display:none}
+@media (max-width:700px){
+  .hero{display:block;min-height:0;padding:0;background:var(--green-deep)}
+  .hero::after,.hero picture,.hero-logo,.hero-sub{display:none}
+  .hero-kv{display:block;width:100%;height:auto}
+  .hero-inner{padding:28px 20px 40px;margin:0 auto}
+  .hero h1{margin-top:0;font-size:17px;text-shadow:none}
+  .tags span{background:transparent}
+}
+
 /* about */
 .about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
 .about-grid img{width:100%;border-radius:4px}
@@ -139,7 +149,7 @@ h2{font-size:clamp(22px,4vw,28px);font-weight:500;letter-spacing:.06em;margin:4p
 .card{background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
 .card .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
 .card .thumb{width:100%;height:240px;object-fit:cover}
-.card .en{font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.08em;color:var(--green)}
+.card .en{font-family:var(--serif);font-size:18px;font-weight:400;letter-spacing:.1em;color:var(--green)}
 .card h3{font-size:16px;font-weight:700;margin:2px 0 10px}
 .card p{font-size:14px}
 .meta{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);margin-top:auto;padding-top:12px;font-size:13px}
@@ -187,7 +197,7 @@ dt{font-weight:700}
 /* footer */
 footer{background:var(--green);color:var(--beige);text-align:center;padding:56px 20px 40px}
 footer img{width:140px;margin:0 auto 24px}
-footer .sns{display:flex;justify-content:center;gap:20px;margin-bottom:22px;font-size:14px;letter-spacing:.08em}
+footer .sns{display:flex;justify-content:center;gap:20px;margin-bottom:22px;font-size:14px;letter-spacing:.1em;font-family:var(--serif)}
 footer .sns a{text-decoration:none;border-bottom:1px solid currentColor}
 footer small{font-size:12px;opacity:.8}
 
@@ -214,8 +224,8 @@ footer small{font-size:12px;opacity:.8}
 
 <main>
   <section class="hero">
+    <img class="hero-kv" src="images/hero-mobile.jpg" alt="Mony&amp;Taff のセルフフォトブース ESTD 2026 IN AWAJI ISLAND" width="650" height="1075">
     <picture>
-      <source media="(max-width:700px)" srcset="images/booth-vertical.jpg">
       <img class="hero-bg" src="images/space.jpg" alt="PHOTOS の看板が目印の、ミッドセンチュリーな雰囲気のセルフフォトブース" width="1800" height="1200">
     </picture>
     <div class="hero-inner">
