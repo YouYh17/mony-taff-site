@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://youyh17.github.io/mony-taff-site/sitemap.xml
