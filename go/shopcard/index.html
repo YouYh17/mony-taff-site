@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Mony&amp;Taff</title>
+<!--
+  ショップカードの QR コードの転送ページ
+  印刷した QR はこのページ（/go/shopcard/）を指している。行き先を変えるときは TARGET だけを書き換える。
+  このファイルは消したり、場所を変えたりしないこと（印刷した QR が使えなくなる）。
+-->
+<script>
+  var TARGET = "../../?utm_source=shopcard&utm_medium=qr&utm_campaign=shopcard";
+  location.replace(TARGET);
+</script>
+<meta http-equiv="refresh" content="1;url=../../?utm_source=shopcard&amp;utm_medium=qr&amp;utm_campaign=shopcard">
+<style>body{font-family:sans-serif;background:#F5EFE6;color:#3B3B3B;text-align:center;padding:40vh 20px 0}</style>
+</head>
+<body>
+<p><a href="../../?utm_source=shopcard&amp;utm_medium=qr&amp;utm_campaign=shopcard">Mony&amp;Taff 公式サイトへ</a></p>
+</body>
+</html>
