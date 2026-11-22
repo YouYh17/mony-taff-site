@@ -65,7 +65,7 @@
     "https://www.tiktok.com/@monyandtaff"
   ],
   "makesOffer": [
-    {"@type": "Offer", "name": "セルフフォトブース撮影", "price": "1500", "priceCurrency": "JPY", "description": "1人あたり。L判写真1枚とモノクロ写真2枚付き。所要時間 約5分。"},
+    {"@type": "Offer", "name": "セルフフォトブース撮影", "price": "1500", "priceCurrency": "JPY", "description": "1人あたり（小学生以下とペットは無料）。L判写真1枚とモノクロ写真2枚付き。所要時間 約5分。"},
     {"@type": "Offer", "name": "アクセサリーカスタム体験", "priceSpecification": {"@type": "PriceSpecification", "minPrice": "3000", "priceCurrency": "JPY"}, "description": "シルバーのチャームを選んでネックレスやブレスレットを作る。所要時間 約15分。"},
     {"@type": "Offer", "name": "アルファベットキーホルダー作り", "priceSpecification": {"@type": "PriceSpecification", "minPrice": "2500", "priceCurrency": "JPY"}, "description": "所要時間 約15分。"},
     {"@type": "Offer", "name": "ペットIDキーホルダー作り", "price": "2500", "priceCurrency": "JPY", "description": "ペットの写真入り。犬・猫・鳥・爬虫類などどんなペットでも可。写真はスマホから送るだけ。所要時間 約10分。"},
@@ -83,6 +83,7 @@
     {"@type": "Question", "name": "ペットIDキーホルダーは、犬や猫以外のペットでも作れますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい、作れます。犬や猫はもちろん、鳥や爬虫類など、どんなペットでも大歓迎です。ペットの写真はスマホから送っていただくだけで、写真入りのIDキーホルダーが作れます。ペットを連れてこなくても作れます。"}},
     {"@type": "Question", "name": "雨の日でも楽しめますか？", "acceptedAnswer": {"@type": "Answer", "text": "屋内なので、雨の日でも天気を気にせずお楽しみいただけます。"}},
     {"@type": "Question", "name": "フォトブースはカメラマンが撮影してくれますか？", "acceptedAnswer": {"@type": "Answer", "text": "カメラマンはいません。セルフフォトブースなので、お客様ご自身のタイミングで気軽に撮影できます。"}},
+    {"@type": "Question", "name": "子どもやペットも料金がかかりますか？", "acceptedAnswer": {"@type": "Answer", "text": "フォトブース撮影は、小学生以下のお子さまとペットは無料です。料金は中学生以上の方1人につき1,500円です。"}},
     {"@type": "Question", "name": "フォトブースではどんな写真がもらえますか？", "acceptedAnswer": {"@type": "Answer", "text": "L判写真1枚とモノクロ写真2枚を、その場でお持ち帰りいただけます。料金は1人1,500円です。"}},
     {"@type": "Question", "name": "所要時間はどのくらいですか？", "acceptedAnswer": {"@type": "Answer", "text": "フォトブースは撮影からプリントまで約5分、ペットIDキーホルダー作りは約10分、アクセサリーカスタム体験とアルファベットキーホルダー作りは約15分が目安です。混雑時はお待ちいただくことがございます。"}},
     {"@type": "Question", "name": "支払い方法は？", "acceptedAnswer": {"@type": "Answer", "text": "現金とPayPayがご利用いただけます。クレジットカードはご利用いただけません。"}},
@@ -117,6 +118,12 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 nav{display:flex;gap:22px;font-size:13px;letter-spacing:.12em;font-family:var(--serif)}
 nav a{text-decoration:none;opacity:.8}
 nav a:hover{opacity:1}
+header .wrap{gap:20px}
+nav{margin-left:auto}
+.sns-icons{display:flex;gap:14px;align-items:center}
+.sns-icons a{display:flex;color:var(--charcoal);opacity:.85}
+.sns-icons a:hover{opacity:1}
+.sns-icons svg{width:21px;height:21px}
 
 /* hero */
 .hero{position:relative;min-height:calc(100svh - 56px);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--cream);overflow:hidden;padding:64px 20px}
@@ -164,6 +171,8 @@ h2{font-size:clamp(22px,4vw,28px);font-weight:500;letter-spacing:.06em;margin:4p
 .meta{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);margin-top:auto;padding-top:12px;font-size:13px}
 .card p+.meta{margin-top:16px}
 .price{font-size:20px;font-weight:700;color:var(--charcoal)}
+.free{margin-top:10px;font-size:13px;text-align:right;color:var(--green)}
+.free strong{font-weight:700}
 .price small{font-size:12px;font-weight:500;margin-left:2px}
 .card.feature .pics{display:grid;grid-template-columns:repeat(3,1fr)}
 .card.feature .pics img{width:100%;height:240px;object-fit:cover}
@@ -203,6 +212,14 @@ dt{font-weight:700}
 .faq details[open] summary::after{content:"−"}
 .faq p{padding:0 0 18px 30px;font-size:14px}
 
+/* follow */
+.follow{text-align:center;padding:56px 0;background:var(--cream)}
+.follow p{font-size:14px;margin-top:8px}
+.follow-btns{display:flex;justify-content:center;gap:12px;margin-top:20px;flex-wrap:wrap}
+.btn-sns{display:inline-flex;align-items:center;gap:8px;min-width:150px;justify-content:center;border:1px solid var(--green);color:var(--green);text-decoration:none;padding:11px 22px;border-radius:999px;font-family:var(--serif);letter-spacing:.1em;font-size:14px}
+.btn-sns:hover{background:var(--green);color:var(--cream)}
+.btn-sns svg{width:18px;height:18px}
+
 /* footer */
 footer{background:var(--green);color:var(--beige);text-align:center;padding:56px 20px 40px}
 footer img{width:140px;margin:0 auto 24px}
@@ -229,6 +246,10 @@ footer .privacy{display:inline-block;max-width:640px;margin-top:14px;font-size:1
       <a href="#access">ACCESS</a>
       <a href="#faq">FAQ</a>
     </nav>
+    <div class="sns-icons">
+      <a href="https://www.instagram.com/mony_and_taff/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg></a>
+      <a href="https://www.tiktok.com/@monyandtaff" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 3c.4 2.4 1.9 4 4.5 4.3v3c-1.7 0-3.2-.5-4.5-1.4v6.3c0 3.2-2.5 5.8-5.7 5.8S3 18.4 3 15.2s2.6-5.7 5.8-5.7c.3 0 .6 0 .9.1v3.2c-.3-.1-.6-.2-.9-.2-1.4 0-2.6 1.2-2.6 2.6s1.2 2.6 2.6 2.6 2.6-1.1 2.6-2.6V3h3.1z" fill="currentColor"/></svg></a>
+    </div>
   </div>
 </header>
 
@@ -274,8 +295,9 @@ footer .privacy{display:inline-block;max-width:640px;margin-top:14px;font-size:1
           <div class="body">
             <div class="en">PHOTO BOOTH</div>
             <h3>セルフフォトブース撮影</h3>
-            <p>淡路島で初めて導入した、海外で人気のセルフフォトブース。レトロな世界観のブースで、カメラマンなしで気軽に撮影できます。カラーのL判写真1枚とモノクロ写真2枚を、その場でお持ち帰り。ワンちゃんなどのペットと一緒の撮影もOKです。</p>
+            <p>淡路島で初めて導入した、海外で人気のセルフフォトブース。レトロな世界観のブースで、カメラマンなしで気軽に撮影できます。カラーのL判写真1枚とモノクロ写真2枚を、その場でお持ち帰り。ワンちゃんなどのペットと一緒の撮影もOK。小学生以下のお子さまとペットは無料です。</p>
             <div class="meta"><span>撮影からプリントまで約5分</span><span class="price">1,500円<small>／1人</small></span></div>
+            <p class="free">小学生以下のお子さま・ペットは<strong>無料</strong></p>
           </div>
         </article>
         <article class="card">
@@ -373,11 +395,22 @@ footer .privacy{display:inline-block;max-width:640px;margin-top:14px;font-size:1
       <details><summary>ペットIDキーホルダーは、犬や猫以外のペットでも作れますか？</summary><p>はい、作れます。犬や猫はもちろん、鳥や爬虫類など、どんなペットでも大歓迎です。ペットの写真はスマホから送っていただくだけで、写真入りのIDキーホルダーが作れます。ペットを連れてこなくても作れます。</p></details>
       <details><summary>雨の日でも楽しめますか？</summary><p>屋内なので、雨の日でも天気を気にせずお楽しみいただけます。</p></details>
       <details><summary>フォトブースはカメラマンが撮影してくれますか？</summary><p>カメラマンはいません。セルフフォトブースなので、お客様ご自身のタイミングで気軽に撮影できます。</p></details>
+      <details><summary>子どもやペットも料金がかかりますか？</summary><p>フォトブース撮影は、小学生以下のお子さまとペットは無料です。料金は中学生以上の方1人につき1,500円です。</p></details>
       <details><summary>フォトブースではどんな写真がもらえますか？</summary><p>L判写真1枚とモノクロ写真2枚を、その場でお持ち帰りいただけます。料金は1人1,500円です。</p></details>
       <details><summary>所要時間はどのくらいですか？</summary><p>フォトブースは撮影からプリントまで約5分、ペットIDキーホルダー作りは約10分、アクセサリーカスタム体験とアルファベットキーホルダー作りは約15分が目安です。混雑時はお待ちいただくことがございます。</p></details>
       <details><summary>支払い方法は？</summary><p>現金とPayPayがご利用いただけます。クレジットカードはご利用いただけません。</p></details>
       <details><summary>駐車場はありますか？</summary><p>無料駐車場が4〜6台分あります。</p></details>
       <details><summary>定休日はいつですか？</summary><p>水曜日が定休日です。その他に不定休があります。臨時休業はGoogleマップとInstagramでお知らせしています。</p></details>
+    </div>
+  </section>
+  <section class="follow">
+    <div class="wrap">
+      <div class="eyebrow">Follow us</div>
+      <p>最新情報や臨時休業のお知らせは、SNS で発信しています。</p>
+      <div class="follow-btns">
+        <a class="btn-sns" href="https://www.instagram.com/mony_and_taff/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg><span>Instagram</span></a>
+        <a class="btn-sns" href="https://www.tiktok.com/@monyandtaff" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 3c.4 2.4 1.9 4 4.5 4.3v3c-1.7 0-3.2-.5-4.5-1.4v6.3c0 3.2-2.5 5.8-5.7 5.8S3 18.4 3 15.2s2.6-5.7 5.8-5.7c.3 0 .6 0 .9.1v3.2c-.3-.1-.6-.2-.9-.2-1.4 0-2.6 1.2-2.6 2.6s1.2 2.6 2.6 2.6 2.6-1.1 2.6-2.6V3h3.1z" fill="currentColor"/></svg><span>TikTok</span></a>
+      </div>
     </div>
   </section>
 </main>
